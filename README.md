@@ -1,57 +1,52 @@
-Conceitos de POO utilizados no projeto Geeklog
+# 🕹️ Geeklog - Projeto Django com POO
 
-Este documento descreve onde e como os conceitos de Programação Orientada a Objetos (POO) são aplicados no projeto Geeklog.
+Este documento descreve onde e como os conceitos de **Programação Orientada a Objetos (POO)** são aplicados no projeto **Geeklog**, uma aplicação Django que integra com a API do IGDB para buscar e exibir informações de jogos.
 
-✅ Arquivos que utilizam POO
+---
 
-1. games/apps.py
+## ✅ Conceitos de POO utilizados no projeto
 
-Classe: GamesConfig
+### 1. `games/apps.py`
+- **Classe:** `GamesConfig`
+- **Conceito:** Herança
+- **Descrição:**  
+  A classe `GamesConfig` herda de `AppConfig`, sendo usada para configurar a aplicação Django chamada `games`.
 
-Conceito: Herança
+---
 
-Descrição: A classe GamesConfig herda de AppConfig, que é usada para configurar a aplicação Django chamada games.
+### 2. `games/models.py`
+- **Classe:** `Review`
+- **Conceitos Utilizados:**
+  - **Herança:** herda de `models.Model`
+  - **Encapsulamento:** uso de atributos e métodos
+  - **Representação:** método especial `__str__`
+- **Descrição:**  
+  Representa um modelo de dados (ORM) para armazenar avaliações de jogos feitas pelos usuários.  
+  Define atributos como:
+  - `user`
+  - `game_id`
+  - `texto`
+  - `created_at`  
+  Além disso, implementa o método `__str__` para facilitar a leitura da instância.
 
-2. games/models.py
+---
 
-Classe: Review
+### 3. `games/migrations/0001_initial.py`
+- **Classe:** `Migration`
+- **Conceito:** Herança (de `migrations.Migration`)
+- **Descrição:**  
+  Script gerado automaticamente pelo Django. Define a primeira migração do banco de dados, criando a tabela `Review`.
 
-Conceitos:
+---
 
-Herança (herda de models.Model)
+## 📁 Localização dos Arquivos
 
-Encapsulamento (uso de atributos e métodos)
+| Caminho Relativo                                | Descrição                         |
+|--------------------------------------------------|-----------------------------------|
+| `Geeklog-main/games/apps.py`                    | Configuração da aplicação         |
+| `Geeklog-main/games/models.py`                  | Modelo de dados com POO           |
+| `Geeklog-main/games/migrations/0001_initial.py` | Script de migração Django         |
 
-Representação (_str_)
+---
 
-Descrição: A classe Review representa um modelo de dados (ORM) para armazenar avaliações de jogos feitas pelos usuários. Ela define atributos como user, game_id, texto e created_at, e um método especial _str_ para exibir representações textuais da instância.
-
-3. games/migrations/0001_initial.py
-
-Classe: Migration
-
-Conceitos:
-
-Herança (de migrations.Migration)
-
-Descrição: Script gerado automaticamente pelo Django. Define uma classe que representa a primeira migração do banco de dados com a criação da tabela Review.
-
-📁 Localização dos arquivos
-
-Caminho Relativo
-
-Arquivo
-
-Geeklog-main/games/apps.py
-
-Configuração da app
-
-Geeklog-main/games/models.py
-
-Modelo de dados POO
-
-Geeklog-main/games/migrations/0001_initial.py
-
-Migração Django
-
-Se você quiser expandir o uso de POO no projeto (por exemplo, adicionando serviços, classes de domínio ou lógica de negócio separada), posso te ajudar com isso também!
+Se você quiser expandir o uso de POO no projeto (por exemplo, criando serviços, classes de domínio ou lógica de negócio separada), posso te ajudar com isso também! 🚀
